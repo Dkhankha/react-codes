@@ -7,12 +7,14 @@ import "./ExpenseItem.css"
 
 const ExpenseItem = (props) => {
   const [amount,setAmount] = useState(props.amount) 
+  
   const deleteHandler = () => {
     setAmount("100")    
     // document.getElementById(props.id).remove();
   }
   
     return (
+    
     <div id={props.id}>
     <Card className='expense-item'>
     <ExpenseDate date={props.date}/>
@@ -20,6 +22,7 @@ const ExpenseItem = (props) => {
     <button className='btn' onClick={deleteHandler}>change</button>
     </Card>
     </div>
+  
   )
 }
 
