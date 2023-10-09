@@ -16,9 +16,20 @@ const ExpenseForm = () => {
   const dateChangedHandler = (event) => {
     setenteredDate(event.target.value)
   }
+
+  const submitHandler = (event) => {
+    event.preventDefault()
+    
+    const saveData = {
+      title: enteredtitle,
+      Amount: enteredAmount,
+      date: new Date(enteredDate)
+    }
+    console.log(saveData)
+  }
   return (
     <div>
-     <form className='form-data'>
+     <form onSubmit={submitHandler} className='form-data'>
       <div className='group'>
         <label htmlFor="Expense">Title:</label>
         <input type="text" id='Expense' onChange={titleChangedHandler} />
